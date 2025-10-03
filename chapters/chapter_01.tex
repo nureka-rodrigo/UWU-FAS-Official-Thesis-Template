@@ -1,0 +1,85 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\noindent This chapter establishes the context for the study and convinces the reader why
+the research topic matters. Write in the past tense when describing prior work and
+in the present tense when outlining the structure of the thesis. Keep paragraphs
+focused: each should develop one idea that supports your overarching argument.
+
+\subsection{Background and Motivation}
+Provide a concise overview of the domain and explain the real-world problem
+that motivated the project. Anchor the discussion with authoritative sources,
+citing each claim using reference keys from \texttt{references.bib} (for
+example, ``network-based detection continues to evolve due to increasing
+traffic volume'' \citep{Abdullateef2019}). Clarify any technical concepts early
+to ensure readers outside your specialization can follow the story.
+
+\subsection{Problem Statement}
+State the core research problem in one or two precise sentences. Detail the gap
+that persists in the literature or practice and justify why addressing it is
+timely. Avoid vague language such as ``improve system performance''—quantify
+the deficiency whenever possible.
+
+\subsection{Research Aim and Objectives}
+Summarize the overall aim followed by 3--5 SMART objectives. Highlight
+measurable outcomes (e.g., ``design and evaluate a deep learning classifier for
+anomaly detection with accuracy above 95\% on benchmark datasets''). If
+hypotheses are formulated, number them clearly for later reference.
+
+\subsection{Scope and Limitations}
+Define the boundaries of the work. Mention datasets, user groups, time frames,
+or technologies deliberately excluded. Being explicit here prevents readers
+from making unrealistic inferences about the results.
+
+\subsection{Significance of the Study}
+Explain who benefits from the research and how. A balanced paragraph should
+touch on theoretical contributions (e.g., new models or insights) and practical
+value for industry, the community, or policy.
+
+\subsection{Notation and Abbreviations}
+Summarize specialised terminology that recurs throughout the thesis. Before it
+is used in the text, register each acronym in
+\verb|preliminary_pages/abbreviations.tex| with the command
+\verb|\newacronym{label}{ABBR}{Full form}|. Within the chapters, reference the
+term using \verb|\gls{label}| on first mention so the glossary expands it to
+the full phrase (e.g., ``\gls{AI}''). Subsequent mentions
+can rely on \verb|\gls{label}| or the plural form \verb|\glspl{label}| as
+needed. When a long form must be repeated for clarity, use
+\verb|\acrfull{label}|. Remember to include the glossaries in the build
+workflow by running \verb|makeglossaries main| after adding or updating
+acronyms.
+
+\subsection{Thesis Organization}
+Close the chapter with a roadmap of the remaining chapters. Introduce each
+chapter in one sentence and mention how it links back to the objectives.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/Figure.png}
+    \caption{Example figure caption. Replace this placeholder with a diagram that
+        contextualizes your research}\label{fig:overview}
+\end{figure}
+
+\noindent Figures should be crisp and legible when printed in grayscale. Use vector
+graphics for diagrams whenever possible and keep captions self-explanatory. Refer
+to each figure in the text immediately before it appears (for example,
+``Figure~\ref{fig:overview} summarizes the proposed architecture'').
+
+\begin{table}[H]
+    \centering
+    \caption{Illustrative table summarizing stakeholder needs or dataset
+        properties. Tailor the columns to match your study.}\label{tab:motivating-factors}
+    \begin{tabular}{p{4cm}p{8cm}}
+        \hline
+        Stakeholder        & Key Concern or Requirement                                            \\
+        \hline
+        Industry partner   & Desire for near real-time anomaly alerts with minimal false positives \\
+        Academic community & Need for reproducible baselines to compare intrusion detection models \\
+        End users          & Expect intuitive dashboards and clear incident explanations           \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\noindent Refer to tables in the narrative (for example, ``Table~\ref{tab:motivating-factors}
+summarizes the expectations that shaped the objectives''). Keep the narrative
+flowing rather than repeating table content verbatim.

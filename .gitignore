@@ -1,0 +1,82 @@
+# .gitignore for LaTeX projects
+# Keeps source files (.tex, .bib, images, .cls, .sty) tracked and ignores build artifacts, caches and editor files
+
+# LaTeX intermediate files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+*.synctex
+*.xdv
+
+# Bibliography / generated files
+*.bbl
+*.blg
+
+# LaTeX glossary and acronym files
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+
+# Build outputs
+*.dvi
+*.ps
+build/
+out/
+_minted-*/
+minted-cache/
+
+# latexmk / other tool configs
+latexmkrc
+
+# TeXstudio / TeXShop lock files
+*.auxlock
+
+# Editor temporary files
+*~
+.#*
+*.swp
+*.swo
+*.swn
+*.kate-swp
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Virtualenvs (if present in repository)
+venv/
+env/
+.env
+.venv
+
+# Misc caches
+_minted-*/
+
+# Main PDF output
+main.pdf

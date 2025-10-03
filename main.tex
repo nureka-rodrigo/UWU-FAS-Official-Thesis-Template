@@ -1,0 +1,156 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Packages
+\usepackage{setspace}
+\usepackage[a4paper, left=5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{multirow, tabularx}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{lipsum}
+\usepackage[acronym]{glossaries}
+\usepackage{tocloft}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+
+\makeglossaries
+
+% Configure captions for tables and figures - 11pt font
+\captionsetup{font=small}
+
+% Customize Table of Contents
+\renewcommand{\contentsname}{TABLE OF CONTENT}
+\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
+\renewcommand{\cftsecfont}{\normalsize}
+\renewcommand{\cftsubsecfont}{\normalsize}
+\renewcommand{\cftsubsubsecfont}{\normalsize}
+
+% Reduce vertical spacing between TOC entries
+\setlength{\cftbeforesecskip}{1pt}
+\setlength{\cftbeforesubsecskip}{1pt}
+\setlength{\cftbeforesubsubsecskip}{1pt}
+
+% Remove bold formatting from page numbers
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+% Format section entries in TOC as "CHAPTER X: SECTION HEADING"
+\renewcommand{\cftsecpresnum}{\uppercase{Chapter} }
+\renewcommand{\cftsecaftersnum}{}
+\renewcommand{\cftsecaftersnumb}{:\space}
+\setlength{\cftsecnumwidth}{5.5em}
+
+% Customize List of Figures and List of Tables
+% Remove indent
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+% Add "Figure" and "Table" prefix
+\renewcommand{\cftfigpresnum}{Figure }
+\renewcommand{\cfttabpresnum}{Table }
+% Adjust numwidth to accommodate the prefix
+\setlength{\cftfignumwidth}{5em}
+\setlength{\cfttabnumwidth}{5em}
+
+% Make list headings uppercase and centered
+\renewcommand{\listtablename}{\centering\large\bfseries LIST OF TABLES}
+\renewcommand{\listfigurename}{\centering\large\bfseries LIST OF FIGURES}
+
+% Harvard style referencing
+\bibliographystyle{agsm}
+\renewcommand{\refname}{\centering\large\bfseries REFERENCES}
+
+% Formatting
+\setstretch{1.5}
+\titleformat{\section}[display]{\large\bfseries\centering}{\uppercase{Chapter} \thesection}{1em}{\large\uppercase}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\itshape}{\thesubsubsection}{1em}{}
+
+% Keep section numbering for subsections
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\sloppy
+
+% Set figure and table numbering to include chapter number
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+
+% Reset figure and table counters at the beginning of each section (chapter)
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\begin{document}
+\pagenumbering{roman}
+
+% Title Page
+\input{preliminary_pages/title_page}
+
+% Declaration Page
+\addcontentsline{toc}{section}{\MakeUppercase{DECLARATION}}
+\input{preliminary_pages/declaration}
+
+% Abstract Page
+\addcontentsline{toc}{section}{\MakeUppercase{ABSTRACT}}
+\input{preliminary_pages/abstract}
+
+% Acknowledgements Page
+\addcontentsline{toc}{section}{\MakeUppercase{ACKNOWLEDGEMENTS}}
+\input{preliminary_pages/acknowledgements}
+
+% Table of Contents
+\addcontentsline{toc}{section}{\MakeUppercase{TABLE OF CONTENTS}}
+\tableofcontents
+\cleardoublepage
+
+%If table are there, keep this. Otherwise remove this List of Tables
+\addcontentsline{toc}{section}{\MakeUppercase{LIST OF TABLES}}
+\listoftables
+\cleardoublepage
+
+%If figures are there, keep this. Otherwise remove this List of Figures
+\addcontentsline{toc}{section}{\MakeUppercase{LIST OF FIGURES}}
+\listoffigures
+\cleardoublepage
+
+%If abbreviations are there, keep this. Otherwise remove this List of Abbreviations
+\addcontentsline{toc}{section}{\MakeUppercase{LIST OF ABBREVIATIONS}}
+\input{preliminary_pages/abbreviations}
+\cleardoublepage
+
+% Main Body	
+\pagenumbering{arabic}
+\addtocontents{toc}{\protect\vspace{10pt}} % Add space before first chapter
+
+\input{chapters/chapter_01}
+\newpage
+
+\input{chapters/chapter_02}
+\newpage
+
+\input{chapters/chapter_03}
+\newpage
+
+\input{chapters/chapter_04}
+\newpage
+
+\input{chapters/chapter_05}
+\newpage
+
+\addtocontents{toc}{\protect\vspace{10pt}} % Add space after last chapter
+
+% Reference Page
+\bibliography{references}
+\addcontentsline{toc}{section}{\MakeUppercase{REFERENCES}}
+\newpage
+
+% Acknowledgements Page
+\addcontentsline{toc}{section}{\MakeUppercase{APPENDICES}}
+\input{preliminary_pages/appendices}
+
+\end{document}

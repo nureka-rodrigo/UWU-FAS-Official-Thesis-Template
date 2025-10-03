@@ -1,0 +1,11 @@
+\newacronym{AI}{AI}{Artificial Intelligence}
+
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\begingroup
+\renewcommand*{\glossarysection}[2][]{%
+    \par\noindent{\large\bfseries #2}\par\nobreak\smallskip
+}
+\printglossary[type=\acronymtype, title=LIST OF ABBREVIATIONS, style=long, nopostdot, nogroupskip, nonumberlist]
+\endgroup
+
+\setcounter{table}{0}
